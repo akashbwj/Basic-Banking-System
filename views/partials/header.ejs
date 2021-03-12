@@ -11,19 +11,20 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css" integrity="sha512-HK5fgLBL+xu6dm/Ii3z4xhlSUyZgTT9tuc/hSrtw6uzJOvgRr2a9jyxxT1ely+B+xFAmJKVSTbpM/CuL7qxO8w==" crossorigin="anonymous" />
 </head>
 <body>
-    <nav>
-        <div class="container mx-auto flex items-center justify-between py-2">
-            <div id="brand" class="px-6 py-1">
-                <a class="flex items-center justify-between" href="/"><i class="las la-hand-holding-usd text-3xl"></i><h3 class="pl-1 text-xl font-bold">TSF Bank</h3></a>
-            </div>
-            <div class="navlinks">
-                <ul class="flex items-center">
-                    <li class="px-6 py-1"><a href="/customers">Customers</a></li>
-                    <li class="px-6 py-1"><a href="/transfers">Transaction History</a></li>
-                </ul>
-            </div>
-        </div>
-    </nav>
+  <nav class="relative select-none bg-grey lg:flex lg:items-stretch w-full">
+    <div class="flex flex-no-shrink items-stretch h-12">
+      <a href="/" class="flex-no-grow flex-no-shrink relative py-2 px-4 leading-normal text-white no-underline flex items-center"><i class="las la-hand-holding-usd text-3xl"></i><h3 class="pl-1 text-xl font-bold">TSF Bank</h3></a>
+      <button id="hamburgerbtn" class="block lg:hidden cursor-pointer ml-auto relative w-12 h-12 p-4">
+        <i class="fas fa-bars"></i>
+    </button>
+    </div>
+    <div id="mobileMenu" class="active lg:flex lg:items-stretch lg:flex-no-shrink lg:flex-grow">
+      <div class="lg:flex lg:items-stretch lg:justify-end ml-auto">
+        <a href="/customers" class="flex-no-grow flex-no-shrink relative py-2 px-4 leading-normal text-white no-underline flex items-center">Customers</a>
+        <a href="/transfers" class="flex-no-grow flex-no-shrink relative py-2 px-4 leading-normal text-white no-underline flex items-center">Transaction History</a>
+      </div>
+    </div>
+  </nav>
     <div class="container mx-auto pt-4 text-center">
 		<% if(error && error.length>0) { %>
 			<div class="bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded relative" role="alert">

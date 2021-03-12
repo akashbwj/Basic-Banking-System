@@ -26,10 +26,6 @@ nav{
 nav i{
     font-size: 24px;
 }
-nav li:hover{
-    border-radius: 10px;
-    background-color:var(--dark-color-b);
-}
 #bank-pic img{
 	width: 100%;
 }
@@ -81,9 +77,6 @@ td, th {
         overflow-x: auto;
         white-space: nowrap;
     }
-	.navlinks{
-		display: none;
-	}
 }
 .tr-row:hover{
 		background-color:#ccd2db;
@@ -129,4 +122,14 @@ input[type=submit]:hover{
 }
 .individual-transfer input{
 	text-decoration: none;
+}
+.active{
+    display: none;
+} 
+.fa-bars{
+    font-size:20px;
+	color: white;
+}
+nav button:focus{
+	outline: none;
 }
