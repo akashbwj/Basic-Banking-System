@@ -1,0 +1,27 @@
+<%- include("partials/header") %>
+<section class="content show-sec show-sec-transfer mx-auto">
+    <div class="p-1 mt-20 mb-4 container mx-auto individual individual-transfer" style="height: fit-content;">
+        <form action="/customer/<%=sender._id%>/transfer/<%=receiver._id%>" method="POST">
+            <div class="pt-6 px-2 grid grid-cols-2 ">
+                <label for="sname">Sender's Name:</label>
+                <input disabled class="text-left" type="text" name="sname" id="sname" value="<%=sender.name%>">
+            </div>
+            <div class="pt-4 px-2 grid grid-cols-2">
+                <label for="balance">Sender's Balance:</label>
+                <input disabled class="text-left" type="text" name="balance" id="balance" value="<%=sender.balance%>">
+            </div>
+            <div class="pt-4 px-2 grid grid-cols-2">
+                <label for="rname">Receiver's Name:</label>
+                <input disabled class="text-left" type="text" name="rname" id="rname" value="<%=receiver.name%>">
+            </div>
+            <div class="pt-4 px-2 grid grid-cols-2">
+                <label for="amount">Amount:</label>
+                <input required class="text-left focus:outline-none" type="text" name="amount" id="amount" style ="text-decoration: none;" placeholder="Amount to pay">
+            </div>
+            <div id="inpDiv" class="text-center pt-4">
+                <input type="submit" class="startbtn px-6 py-2 my-6 rounded-full text-white font-medium mt-4 focus:outline-none" value="Transfer">
+            </div>
+        </form>
+    </div>
+</section>
+<%- include("partials/footer") %>

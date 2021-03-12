@@ -1,0 +1,45 @@
+<%- include("partials/header") %>
+<section class="content">
+    <div class="container table-div mx-auto pt-12">
+        <h1 class="font-bold text-lg mb-4 ml-4">All Transactions</h1>
+    <table class="w-full table-auto mb-16">
+        <thead>
+            <tr>
+                <th class="px-4 py-2 text-left">Sender's Name</th>
+                <th class="px-4 py-2 text-left">Receiver's Name</th>
+                <th class="px-4 py-2 text-left">Amount</th>
+                <th class="px-4 py-2 text-left">Date</th>
+                <th class="px-4 py-2 text-left">Status</th>
+            </tr>
+        </thead>
+        <tbody>
+            <% if(transfers.length) { %>
+                <% transfers.forEach((transfer)=>{ %>
+                    <tr class="tr-row">
+                        <td class="border px-4 py-2">
+                            <a style="display: block;" href="/customer/<%=transfer.senderId._id%>"><%=transfer.senderId.name%></a>
+                        </td>
+                        <td class="border px-4 py-2">
+                            <a style="display: block;" href="/customer/<%=transfer.receiverId._id%>"><%=transfer.receiverId.name%></a>
+                        </td>
+                        <td class="border px-4 py-2">
+                            <%=transfer.amount%>
+                        </td>
+                        <td class="border px-4 py-2">
+                            <%=transfer.createdAt.toString().substring(0,24)%>
+                        </td>
+                        <td class="border px-4 py-2 text-green-600">
+                            <%=transfer.status%>
+                        </td>
+                    </tr>
+                <% }) %>
+            <% } else {%>
+                <tr>
+                    <td class="p-4"><span>There are no Transactions!</span></td>
+                </tr>
+            <% } %>
+        </tbody>
+    </table>
+    </div>
+</section>
+<%- include("partials/footer") %>

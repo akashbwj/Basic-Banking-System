@@ -1,0 +1,48 @@
+<%- include("partials/header") %>
+<section class="content">
+    <div class="container table-div mx-auto pt-12">
+        <h1 class="font-bold text-lg mb-4 ml-4">Select The Customer To Transfer To</h1>
+    <table class="w-full table-auto mb-16">
+        <thead>
+            <tr>
+                <th class="px-4 py-2 text-left">Name</th>
+                <th class="px-4 py-2 text-left">Email</th>
+                <th class="px-4 py-2 text-left">Gender</th>
+                <th class="px-4 py-2 text-left">DOB</th>
+                <th class="px-4 py-2 text-left">Balance</th>
+            </tr>
+        </thead>
+        <tbody>
+            <% if(customers.length) { %>
+                <% customers.forEach((customer)=>{ %>
+                    <% if(customer._id!=senderid) {%>
+                    <tr class="tr-row">
+                        <td class="border px-4 py-2">
+                            <a style="display: block;" href="/customer/<%=senderid%>/transfer/<%=customer._id%>"><%=customer.name%></a>
+                        </td>
+                        <td class="border px-4 py-2">
+                            <a style="display: block;" href="/customer/<%=senderid%>/transfer/<%=customer._id%>"><%=customer.email%></a>
+                        </td>
+                        <td class="border px-4 py-2">
+                            <a style="display: block;" href="/customer/<%=senderid%>/transfer/<%=customer._id%>"><%=customer.gender%></a>
+                        </td>
+                        <td class="border px-4 py-2">
+                            <a style="display: block;" href="/customer/<%=senderid%>/transfer/<%=customer._id%>"><%=customer.dob%></a>
+                        </td>
+                        <td class="border px-4 py-2">
+                            <a style="display: block;" href="/customer/<%=senderid%>/transfer/<%=customer._id%>"><%=customer.balance%></a>
+                        </td>
+                    </tr>
+                <% } %>
+                <% }) %>
+
+            <% } else {%>
+                <tr>
+                    <td class="p-4"><span>There are no customers!</span></td>
+                </tr>
+            <% } %>
+        </tbody>
+    </table>
+    </div>
+</section>
+<%- include("partials/footer") %>

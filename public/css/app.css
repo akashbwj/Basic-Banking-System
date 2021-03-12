@@ -1,0 +1,132 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto&display=swap');
+
+:root {
+	--dark-color-a: #07021c;
+	--dark-color-b: #151530;
+	--light-color: #e6e9ff;
+	--success-color: #5cb85c;
+	--error-color: #d9534f;
+}
+
+* {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+	/* background: var(--light-color); */
+}
+
+nav{
+    background-color: var(--dark-color-a);
+    color:white;
+}
+nav i{
+    font-size: 24px;
+}
+nav li:hover{
+    border-radius: 10px;
+    background-color:var(--dark-color-b);
+}
+#bank-pic img{
+	width: 100%;
+}
+.startbtn{
+	background-color: var(--dark-color-a);
+}
+footer{
+    background-color: var(--dark-color-a);
+    color:white;
+}
+@media(max-width:1070px){
+	.hero{
+		padding: 30px;
+	}
+}
+@media(max-width:1070px){
+	footer a{
+		padding-left: 5px;
+		padding-right: 5px;
+	}
+}
+.content{
+	color: var(--dark-color-a);
+}
+html, body {
+	height: 100%;
+  }
+body {
+	display: flex;
+	flex-direction: column;
+}
+.content {
+	flex: 1 0 auto;
+}
+footer {
+	flex-shrink: 0;
+}
+
+td, th {
+	border: 1px solid #d1d1d1;
+}
+
+@media(max-width:1060px){
+    .table-div{
+        max-width: 90%;
+    }
+    table{
+        display: block;
+        overflow-x: auto;
+        white-space: nowrap;
+    }
+	.navlinks{
+		display: none;
+	}
+}
+.tr-row:hover{
+		background-color:#ccd2db;
+}
+.individual{
+	height: 500px;
+	box-shadow:
+	0 2.8px 2.2px rgba(0, 0, 0, 0.034),
+	0 6.7px 5.3px rgba(0, 0, 0, 0.048),
+	0 12.5px 10px rgba(0, 0, 0, 0.06),
+	0 22.3px 17.9px rgba(0, 0, 0, 0.072),
+	0 41.8px 33.4px rgba(0, 0, 0, 0.086),
+	0 100px 80px rgba(0, 0, 0, 0.12);
+	background-color: var(--light-color);
+	border-radius: 50px;
+}
+.individual input{
+	background: var(--light-color);
+	text-decoration: underline;
+}
+.individual label,.individual #transfer-btn{
+	padding-left: 20px;
+}
+@media(min-width:500px){
+	.show-sec{
+		width: 450px;
+	}
+}
+input[type=submit]{
+	background-color: var(--dark-color-a);
+	width: 280px;
+	text-decoration: none;
+}
+
+input[type=submit]:hover{
+	cursor: pointer;
+}
+
+@media(min-width:500px){
+	.show-sec-transfer{
+		width: 350px;
+	}
+}
+.individual-transfer input{
+	text-decoration: none;
+}
